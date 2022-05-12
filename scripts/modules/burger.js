@@ -1,4 +1,8 @@
+const duration = 1000;
+
 const burgerMenu = document.querySelector('.header__menu');
+
+burgerMenu.style.transition = `opacity ${duration}ms ease-out`;
 
 document.addEventListener('click', e => {
   const target = e.target;
