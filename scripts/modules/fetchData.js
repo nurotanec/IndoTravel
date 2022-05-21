@@ -125,10 +125,7 @@ reserveDates.addEventListener('change', e => {
 
 reservePeople.addEventListener('change', e => {
   if (Number(e.target.value)) {
-    console.log('e.target.value: ', Number(e.target.value));
     currentPeople = Number(e.target.value);
-    console.log('currentPeople: ', currentPeople);
-    console.log('currentPeople: ', typeof currentPeople);
   } else {
     currentPeople = 0;
   }
