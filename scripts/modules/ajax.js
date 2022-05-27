@@ -97,9 +97,9 @@ reservationButton.addEventListener('click', async e => {
             'date': reservationData.textContent.split(',')[0],
             'people': reservePeople.value,
         };
-        await showModal('error', data, reserve);
+        const res = await showModal('error', data, reserve);
 
-        disableForm();
+        if (res) disableForm();
     }
 });
 

@@ -34,13 +34,17 @@ const showModal = async(error, data, callback) => {
     btnWrapper.append(confirmBtn, editBtn);
     document.body.append(overlay);
 
-    editBtn.addEventListener('click', () => {
-        overlay.remove();
-    });
+    return new Promise((resolve) => {
+        editBtn.addEventListener('click', () => {
+            overlay.remove();
+            return resolve(false);
+        });
 
-    confirmBtn.addEventListener('click', () => {
-        callback();
-        overlay.remove();
+        confirmBtn.addEventListener('click', () => {
+            callback();
+            overlay.remove();
+            return resolve(true);
+        });
     });
 };
 
